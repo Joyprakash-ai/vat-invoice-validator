@@ -1,0 +1,5 @@
+pdfplumber==0.10.3
+pytesseract==0.3.10
+requests==2.31.0
+gradio==4.19.1
+pytest==7.4.0
