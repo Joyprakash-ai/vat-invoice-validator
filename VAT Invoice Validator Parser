@@ -1,0 +1,72 @@
+# VAT Invoice Validator & Parser 🔍💶
+
+An AI-powered Python tool to automatically extract, validate, and structure data from EU VAT invoices. Built for SMEs and freelancers drowning in manual paperwork.
+
+**✨ Features**
+- **Smart Extraction:** Uses Tesseract OCR & NLP to pull supplier, date, total, and VAT ID from PDFs/Scans.
+- **VIES Validation:** Automatically checks extracted VAT numbers against the EU's official VIES database.
+- **JSON & CSV Export:** Outputs structured data for easy import into accounting software (Datev, Lexware).
+- **Batch Processing:** Handle folders of invoices at once.
+- **Simple GUI:** Optional Gradio interface for non-technical users.
+
+**🎯 Use Case & Impact**
+> **Problem:** A German e-commerce SME spends ~15 hours/month manually entering invoice data.
+> **Solution:** This script automates the process, cutting it to 15 **minutes**, reducing errors and freeing up capacity.
+> **Goal:** Part of a suite of tools to make EU compliance effortless for small businesses.
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.10+
+- Tesseract OCR installed on your system
+
+### Installation & Run
+```bash
+# 1. Clone the repository
+git clone https://github.com/{joyprakash-ai}/vat-invoice-validator.git
+cd vat-invoice-validator
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run on a sample invoice
+python process_invoice.py --file sample_invoice.pdf
+```
+
+### Example Output
+```json
+{
+  "supplier": "Muster GmbH",
+  "vat_id": "DE123456789",
+  "invoice_date": "2025-03-15",
+  "total_amount_net": 1250.00,
+  "total_amount_gross": 1487.50,
+  "vies_valid": true
+}
+```
+
+## 📁 Project Structure
+```
+vat-invoice-validator/
+├── process_invoice.py    # Main logic
+├── vies_checker.py       # VAT validation module
+├── gui.py                # Simple Gradio interface
+├── requirements.txt      # Python dependencies
+├── samples/              # Example invoices
+└── tests/                # Unit tests
+```
+
+## 🛠 Tech Stack
+- **Python** (pdfplumber, pytesseract, requests)
+- **Gradio** for the demo UI
+- **EU VIES SOAP API** for live validation
+
+## 🤝 Contributing
+Found a bug? Have a feature idea for EU compliance? PRs are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
+
+## 📄 License
+MIT License. See [LICENSE](LICENSE) file.
+
+---
+**Built with ❤️ by [Joy prakash](https://github.com/{joyprakash-ai}) for the EU SME community.**
+> *Part of the "Compliance Automation Suite" project.*
